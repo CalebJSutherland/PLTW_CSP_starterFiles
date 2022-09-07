@@ -10,7 +10,11 @@ painter.speed(0)
 
 
 # Add an infinite loop
-
+answer=input("what is your favorite number")
+answer="N"
+while ("N" > 0):
+  "N"+1
+  print("N")
 
 wn = trtl.Screen()
 wn.mainloop()

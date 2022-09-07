@@ -12,6 +12,9 @@ painter.goto(-50, 150)
 painter.pendown()
 
 # Your code here
+for line in range(8):
+    painter.forward(50)
+    painter.right(45)
 
 wn = trtl.Screen()
 wn.mainloop()
