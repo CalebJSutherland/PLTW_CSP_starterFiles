@@ -2,19 +2,19 @@
 import turtle as trtl
 # instead of a descriptive name of the turtle such as painter,
 # a less useful variable name x is used
-x = trtl.Turtle()
-x.pensize(40)
-x.circle(20)
-w = 6
+spider = trtl.Turtle()
+spider.pensize(40)
+spider.circle(20)
+legs = 8
 y = 70
-z = 380 / w
-x.pensize(5)
+z = 360 / legs
+spider.pensize(5)
 n = 0
-while (n < w):
-  x.goto(0,0)
-  x.setheading(z*n)
-  x.forward(y)
+while (n < legs):
+  spider.goto(0,20)
+  spider.setheading(z*n)
+  spider.forward(y)
   n = n + 1
-x.hideturtle()
+spider.hideturtle()
 wn = trtl.Screen()
 wn.mainloop()
