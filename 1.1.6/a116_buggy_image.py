@@ -1,20 +1,76 @@
 #   a116_buggy_image.py
 import turtle as trtl
-# instead of a descriptive name of the turtle such as painter,
-# a less useful variable name x is used
+# formula
 spider = trtl.Turtle()
+legs = 16
+incrament = 360 / legs
+
+#add body
+spider.goto(0,0)
 spider.pensize(40)
 spider.circle(20)
-legs = 8
-y = 70
-z = 360 / legs
+
+#add legs
 spider.pensize(5)
-n = 0
-while (n < legs):
-  spider.goto(0,20)
-  spider.setheading(z*n)
-  spider.forward(y)
-  n = n + 1
+spider.goto(0,20)
+spider.setheading(incrament*8)
+spider.circle(100, -90)
+spider.penup()
+spider.goto(0,20)
+spider.pendown()
+spider.setheading(incrament*9)
+spider.circle(100, -90)
+spider.penup()
+spider.goto(0,20)
+spider.pendown()
+spider.setheading(incrament*10)
+spider.circle(100, -90)
+spider.penup()
+spider.goto(0,20)
+spider.pendown()
+spider.setheading(incrament*11)
+spider.circle(100, -90)
+spider.penup()
+spider.goto(0,20)
+spider.pendown()
+spider.setheading(incrament*5)
+spider.circle(100, 90)
+spider.penup()
+spider.goto(0,20)
+spider.pendown()
+spider.setheading(incrament*6)
+spider.circle(100, 90)
+spider.penup()
+spider.goto(0,20)
+spider.pendown()
+spider.setheading(incrament*7)
+spider.circle(100, 90)
+spider.penup()
+spider.goto(0,20)
+spider.pendown()
+spider.setheading(incrament*8)
+spider.circle(100, 90)
+spider.penup()
+
+#add head
+spider.goto (0,-30)
+spider.pendown()
+spider.pensize(40)
+spider.circle(5)
+spider.penup()
+
+#add eyes
+spider.goto(10,-40)
+spider.pencolor("purple")
+spider.pensize(5)
+spider.pendown()
+spider.circle(5)
+spider.penup()
+spider.goto(-10,-40)
+spider.pensize(5)
+spider.pendown()
+spider.circle(5)
+
 spider.hideturtle()
 wn = trtl.Screen()
 wn.mainloop()

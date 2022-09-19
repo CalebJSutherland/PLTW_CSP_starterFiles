@@ -13,17 +13,21 @@ for s in turtle_shapes:
   t = trtl.Turtle(shape=s)
   my_turtles.append(t)
 
-#  
+#  cordenent information
 startx = 0
 starty = 0
 
-#
+# move to cordenent
 for t in my_turtles:
   t.goto(startx, starty)
   t.right(45)     
   t.forward(50)
 
-#	
+  #change content
+  t.pencolor(turtle_colors)
+  t.turtle_colors.pop
+
+# alter cordent	
   startx = startx + 50
   starty = starty + 50
 
