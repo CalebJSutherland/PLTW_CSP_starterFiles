@@ -20,6 +20,7 @@ for s in turtle_shapes:
   ht.penup()
   new_color = horiz_colors.pop()
   ht.fillcolor(new_color)
+  ht.pencolor(new_color)
   ht.goto(-350, tloc)
   ht.setheading(0)
 
@@ -28,17 +29,25 @@ for s in turtle_shapes:
   vt.penup()
   new_color = vert_colors.pop()
   vt.fillcolor(new_color)
+  vt.pencolor(new_color)
   vt.goto( -tloc, 350)
   vt.setheading(270)
   
   tloc += 50
 
-# TODO: move turtles across and down screen, stopping for collisions
-"""
-steps = 0
-while steps < 50:
-	steps = steps + 1
-"""
+# move turtles across and down screen, stopping for collisions
+
+  steps = 0
+  while steps < 50:
+    ht.pendown()
+    vt.pendown()
+    vt.forward(10)
+    ht.forward(10)
+    if vt.xcor()== ht.xcor() and vt.ycor()== ht.ycor():
+      break
+    else:
+      steps = steps + 1
+
 
 wn = trtl.Screen()
 wn.mainloop()
