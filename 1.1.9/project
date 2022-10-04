@@ -1,0 +1,61 @@
+#import turtle
+import random as rand
+import turtle as trtl
+#make turtle list 
+entity_list=[]
+entity_colors=["purple","green","darkred","blue","indigo"]
+t =0
+x = rand.randint(-199,199)
+y = rand.randint(-199,199)
+while t<5:
+    new_color=entity_colors.pop()
+    entity = trtl.Turtle()
+    entity_list.append(entity)
+    entity.fillcolor(new_color)
+    entity.pencolor(new_color)
+    entity.penup()
+    entity.goto(x,y)
+    entity.pendown()
+    t=t+1
+    x=rand.randint(-199,199)
+    y=rand.randint(-199,199)
+#randomize turtle movement
+for entity in entity_list:
+    steps = 0
+    entity.setheading(rand.randint(-180,180))
+    while steps<(rand.randint(2000,5000)):
+        entity.speed(100)
+        entity.forward(10)
+        steps = steps + 1
+#redirect off of the boundry
+        if entity.xcor() <= -200 :
+            entity.left(-45)
+        if entity.ycor() <= -200 :
+            entity.left(-45)
+        if entity.ycor() >= 200 :
+            entity.right(-45)
+        if entity.xcor() >= 200 :
+            entity.right(-45)
+        if entity.xcor() >= 200 and entity.ycor() >= 200:
+            entity.goto(rand.randint(-199,199),rand.randint(-199,199))
+        if entity.xcor() >= 200 and entity.ycor() <= -200:
+            entity.goto(rand.randint(-199,199),rand.randint(-199,199))
+        if entity.xcor() <= -200 and entity.ycor() >= 200:
+           entity.goto(rand.randint(-199,199),rand.randint(-199,199))
+        if entity.xcor() <= -200 and entity.ycor() <= -200:
+            entity.goto(rand.randint(-199,199),rand.randint(-199,199))
+#frame turtle
+border = trtl.Turtle()
+border.penup()
+border.goto(-200,-200)
+border.shape(none)
+border.pendown()
+sides=0
+while sides < 4:
+    border.forward(400)
+    border.left(90)
+#reset turtle after colision
+#may not be posible with the current situation
+
+wn = trtl.Screen()
+wn.mainloop()
