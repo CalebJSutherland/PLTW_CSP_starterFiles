@@ -3,11 +3,11 @@ import random as rand
 import turtle as trtl
 #make turtle list 
 entity_list=[]
-entity_colors=["purple","green","darkred","blue","indigo"]
+entity_colors=["darkred","purple","green","blue","indigo"]
 t =0
-x = rand.randint(-199,199)
-y = rand.randint(-199,199)
 while t<5:
+    x=rand.randint(-199,199)
+    y=rand.randint(-199,199)
     new_color=entity_colors.pop()
     entity = trtl.Turtle()
     entity_list.append(entity)
@@ -17,8 +17,7 @@ while t<5:
     entity.goto(x,y)
     entity.pendown()
     t=t+1
-    x=rand.randint(-199,199)
-    y=rand.randint(-199,199)
+   
 #randomize turtle movement
 for entity in entity_list:
     steps = 0
